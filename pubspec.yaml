@@ -1,0 +1,14 @@
+name: dogma_rest_connection
+version: 0.0.1
+description: A minimal command-line application.
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+dependencies:
+  dogma_connection:
+    path: ../dogma-connection
+  uri: any
+dev_dependencies:
+  browser: any
+  shelf: any
+  shelf_route: any
+  unittest: any
