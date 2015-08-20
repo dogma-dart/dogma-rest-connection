@@ -3,20 +3,25 @@
 // Use of this source code is governed by a zlib license that can be found in
 // the LICENSE file.
 
-library dogma.rest_connection.test.tests.all;
+/// Contains responses for testing [Request]s.
+library dogma.rest_connection.test.server.basic_access_credentials;
 
 //---------------------------------------------------------------------
 // Imports
 //---------------------------------------------------------------------
 
-import 'basic_access_credentials.dart' as basic_access_credentials;
-import 'request.dart' as request;
+import 'package:shelf/shelf.dart' as shelf;
+
+import '../shared/response.dart';
 
 //---------------------------------------------------------------------
-// Entry point
+// Library contents
 //---------------------------------------------------------------------
 
-void main() {
-  basic_access_credentials.main();
-  request.main();
+shelf.Response basicAccessUsernamePassword(shelf.Request request) {
+  if (request.headers['Authorization'] == 'Basic $tokenUsernamePassword') {
+    return new shelf.Response.ok(jsonSuccessReply);
+  } else {
+    return new shelf.Response.forbidden('ERROR');
+  }
 }

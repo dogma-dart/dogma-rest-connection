@@ -10,8 +10,24 @@ library dogma.rest_connection.src.status_codes;
 // Library contents
 //---------------------------------------------------------------------
 
-/// Determines if a http request was successful.
+/// Determines if a HTTP request was successful.
 ///
 /// Requests in the 2xx range indicate a successful request.
 bool requestSuccessful(int code)
     => (code >= 200) && (code < 300);
+
+/// Determines if a HTTP request failed due to the client.
+///
+/// Requests in the 4xx range indicate a client error.
+bool clientError(int code)
+    => (code >= 400) && (code < 500);
+
+/// Determines if a HTTP request failed due to authentication.
+bool authenticationError(int code)
+    => (code == 401) || (code == 403);
+
+/// Determines if a HTTP request failed due to the server.
+///
+/// Requests in the 5xx range indicate a server error.
+bool serverError(int code)
+    => (code >= 500) && (code < 600);

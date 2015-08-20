@@ -3,15 +3,12 @@
 // Use of this source code is governed by a zlib license that can be found in
 // the LICENSE file.
 
-library dogma.rest_connection.test.shared.response;
+library dogma.rest_connection;
 
 //---------------------------------------------------------------------
-// Library contents
+// Exports
 //---------------------------------------------------------------------
 
-const jsonSuccessReply = '{"status":"ok"}';
-const textSuccessReply = 'ok';
-const binarySuccessReply = const [0, 1, 2, 3, 4, 5];
-
-const tokenUsernamePassword = 'dXNlcm5hbWU6cGFzc3dvcmQ=';
-const tokenAladdinOpenSesame = 'QWxhZGRpbjpvcGVuIHNlc2FtZQ==';
+export 'src/authentication_exception.dart';
+export 'src/rest_connection.dart';
+export 'src/rest_credentials.dart';

@@ -37,6 +37,9 @@ const postRouteBinary   = '/api/rest_test/binary/post';
 const putRouteBinary    = '/api/rest_test/binary/put';
 const deleteRouteBinary = '/api/rest_test/binary/delete';
 
+const basicAuthenticationUsername = '/api/basic_auth_test/username';
+const basicAuthenticationAladdin = '/api/basic_auth_test/aladdin';
+
 //---------------------------------------------------------------------
 // Rotuing api response
 //---------------------------------------------------------------------
@@ -58,4 +61,7 @@ var routes = {
   'postRouteBinary'  : toServerRoute(postRouteBinary),
   'putRouteBinary'   : toServerRoute(putRouteBinary),
   'deleteRouteBinary': toServerRoute(deleteRouteBinary),
+
+  'basicAuthenticationUsername': toServerRoute(basicAuthenticationUsername),
+  'basicAuthenticationAladdin' : toServerRoute(basicAuthenticationAladdin)
 };

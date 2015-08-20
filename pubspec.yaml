@@ -4,6 +4,7 @@ description: A minimal command-line application.
 environment:
   sdk: '>=1.0.0 <2.0.0'
 dependencies:
+  crypto: any
   dogma_connection:
     path: ../dogma-connection
   uri: any

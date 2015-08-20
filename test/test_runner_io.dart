@@ -3,20 +3,28 @@
 // Use of this source code is governed by a zlib license that can be found in
 // the LICENSE file.
 
-library dogma.rest_connection.test.tests.all;
+library dogma.rest_connection.test.test_runner_html;
 
 //---------------------------------------------------------------------
 // Imports
 //---------------------------------------------------------------------
 
-import 'basic_access_credentials.dart' as basic_access_credentials;
-import 'request.dart' as request;
+import 'package:dogma_rest_connection/src/request_factory_io.dart';
+
+import 'shared/runner.dart';
+import 'tests/all.dart' as all;
 
 //---------------------------------------------------------------------
-// Entry point
+// Application
 //---------------------------------------------------------------------
 
 void main() {
-  basic_access_credentials.main();
-  request.main();
+  // Initialize the Request factory
+  initializeRequests();
+
+  // Make sure the server is present to request to
+  testServerConnection().then((_) {
+    // Run all the tests
+    all.main();
+  });
 }

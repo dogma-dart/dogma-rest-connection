@@ -3,7 +3,7 @@
 // Use of this source code is governed by a zlib license that can be found in
 // the LICENSE file.
 
-/// Contains the [RestHtml] class.
+/// Contains the [RequestHtml] class.
 library dogma.rest_connection.src.request_html;
 
 //---------------------------------------------------------------------
@@ -26,7 +26,7 @@ import 'status_codes.dart';
 // Library contents
 //---------------------------------------------------------------------
 
-/// An implementation of [Request] using the [dart:html] libraries.
+/// An implementation of [Request] using the dart:html library.
 class RequestHtml extends Request {
   //---------------------------------------------------------------------
   // Member variables
@@ -55,7 +55,7 @@ class RequestHtml extends Request {
       : super(url, method, responseType);
 
   //---------------------------------------------------------------------
-  // Protected methods
+  // Request
   //---------------------------------------------------------------------
 
   @override

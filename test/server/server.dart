@@ -19,7 +19,9 @@ import 'package:shelf/shelf.dart' as shelf;
 import 'package:shelf/shelf_io.dart' as io;
 import 'package:shelf_route/shelf_route.dart';
 
+import 'basic_access_credentials.dart';
 import 'request.dart';
+
 import '../shared/routes.dart';
 
 //---------------------------------------------------------------------
@@ -74,7 +76,9 @@ void main(List<String> args) {
                    ..get(getRouteBinary, okResponseBinary)
                    ..post(postRouteBinary, okResponseBinary)
                    ..put(putRouteBinary, okResponseBinary)
-                   ..delete(deleteRouteBinary, okResponseBinary);
+                   ..delete(deleteRouteBinary, okResponseBinary)
+                   // Basic access credentials
+                   ..get(basicAuthenticationUsername, basicAccessUsernamePassword);
 
   var handler = const shelf.Pipeline()
       .addMiddleware(_logApiCalls)

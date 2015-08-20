@@ -28,3 +28,13 @@ enum RequestMethod {
   /// Deletes a resource.
   Delete
 }
+
+/// Transforms a [RequestMethod] into the HTTP verb used in the request headers.
+String requestMethodToString(RequestMethod method) {
+  switch (method) {
+    case RequestMethod.Get: return 'GET';
+    case RequestMethod.Post: return 'POST';
+    case RequestMethod.Put: return 'PUT';
+    default: return 'DELETE';
+  }
+}
