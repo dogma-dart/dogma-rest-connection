@@ -1,15 +1,11 @@
 name: dogma_rest_connection
 version: 0.0.1
-description: A minimal command-line application.
+description: RESTful data connection for Dart.
 environment:
-  sdk: '>=1.0.0 <2.0.0'
+  sdk: '>=1.12.0 <2.0.0'
 dependencies:
-  crypto: any
-  dogma_connection:
-    path: ../dogma-connection
-  uri: any
-dev_dependencies:
-  browser: any
-  shelf: any
-  shelf_route: any
-  unittest: any
+  dogma_connection: '^0.0.1'
+  dogma_rest_client: '^0.0.1'
+  uri: '^0.11.0'
+author: Don Olmstead <don.j.olmstead@gmail.com>
+homepage: http://dogma-dart.github.io/
