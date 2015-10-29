@@ -112,7 +112,7 @@ class RestConnection implements Connection {
     var template = _routes[table];
 
     if (template != null) {
-      var variables = {};
+      var variables = <String, String>{};
 
       if (where != null) {
         _mapClauses(where, variables);
