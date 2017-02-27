@@ -132,8 +132,9 @@ class RestConnection implements Connection {
         _mapClauses(expression.left, whereClauses);
         _mapClauses(expression.right, whereClauses);
       } else if (nodeType == ExpressionType.equal) {
-        var current = whereClauses[expression.left];
-        var right = expression.right.toString();
+        var key = expression.left.name;
+        var current = whereClauses[key];
+        var right = expression.right.value.toString();
         var value;
 
         if (current != null) {
@@ -142,7 +143,7 @@ class RestConnection implements Connection {
           value = right;
         }
 
-        whereClauses[expression.left] = value;
+        whereClauses[key] = value;
       }
     }
   }
